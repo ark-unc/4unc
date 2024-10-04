@@ -45,7 +45,7 @@ sub_cat_selected = st.multiselect(label2, sub_cat_options)
 st.write("Selected Option is :", sub_cat_selected)
 
 st.write("### (3) show a line chart of sales for the selected items in (2)")
-sales_by_month_cat = df.filter(items=['Sales','Sub_Category']).groupby(pd.Grouper(freq='M')).sum()
+sales_by_month_cat = df.filter(items=['Sales','Sub_Category']).groupby('Sub_Category',pd.Grouper(freq='M')).sum()
 st.write("Selected Option is :", sales_by_month_cat)
 
 #st.line_chart(sales_by_month_cat, y='Sales")
