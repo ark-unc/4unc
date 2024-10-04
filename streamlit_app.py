@@ -51,7 +51,7 @@ sales_by_month_cat = df.filter(items=['Sales','Sub_Category']).groupby(pd.Groupe
 #sales_by_month_cat_1 = sales_by_month_cat.groupby('Sub_Category')
 #st.write("Selected Option is :", sales_by_month_cat_1)
 
-st.line_chart(sales_by_month_cat, y='Sales", color="Sub_Category")
+st.line_chart(sales_by_month_cat, y='Sales', color='Sub_Category')
 #st.line_chart(df.groupby("Sub_Category", as_index=False).sum(), x="Sub_Category", y="Sales", color="#04f")
               
 st.write("## Your additions")
