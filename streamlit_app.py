@@ -31,14 +31,17 @@ st.line_chart(sales_by_month, y="Sales")
 
 # Additions
 st.write("## Additions")
-label = 'Category'
+label1 = 'Category'
+label2 = 'Sub-Category'
 st.write("### (1) add a drop down for Category")
-selected_option = st.selectbox(label, df.groupby("Category"))
+selected_option = st.selectbox(label1, df.groupby("Category"))
 st.write("### (2) add a multi-select for Sub_Category *in the selected Category (1)* ")
 
 st.write("### ADDED###*")
 
-st.multiselect(label, df.groupby("Sub-Category"))
+sub_cat_options = (st['Sub_Category'].loc[st['Category'] == selected_option].unique())
+
+st.multiselect(label2, sub_cat_options)
 
 st.write("## Your additions")
 st.write("### (1) add a drop down for Category (https://docs.streamlit.io/library/api-reference/widgets/st.selectbox)")
