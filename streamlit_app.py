@@ -40,7 +40,7 @@ st.write("Selected Option is :", selected_option)
 
 st.write("### (2) add a multi-select for Sub_Category *in the selected Category (1)* ")
 sub_cat_options = (df['Sub_Category'].loc[df['Category'] == selected_option].unique())
-selected_sub-cat = st.multiselect(label2, sub_cat_options)
+sub_cat_selected = st.multiselect(label2, sub_cat_options)
 
 st.write("Selected Option is :", selected_sub-cat)
 
