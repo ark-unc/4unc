@@ -19,7 +19,7 @@ st.bar_chart(df.groupby("Category", as_index=False).sum(), x="Category", y="Sale
 
 # Additions
 label = 'Category'
-st.multiselect(label, df["Category"])
+st.multiselect(label, df.groupby("Category"))
 # Aggregating by time
 # Here we ensure Order_Date is in datetime format, then set is as an index to our dataframe
 df["Order_Date"] = pd.to_datetime(df["Order_Date"])
