@@ -31,10 +31,11 @@ st.line_chart(sales_by_month, y="Sales")
 
 # Additions
 st.write("## Additions")
-st.write("### (1) add a drop down for Category")
-sc = st.selectbox(label, df.groupby("Category"))
-st.write("### (2) add a multi-select for Sub_Category *in the selected Category (1)* ")
 label = 'Category'
+st.write("### (1) add a drop down for Category")
+selected_option = st.selectbox(label, df.groupby("Category"))
+st.write("### (2) add a multi-select for Sub_Category *in the selected Category (1)* ")
+
 st.write("### ADDED###*")
 
 st.multiselect(label, df.groupby("Sub-Category"))
