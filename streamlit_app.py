@@ -37,9 +37,9 @@ st.write("### (1) add a drop down for Category")
 selected_option = st.selectbox(label1, df.groupby("Category"))
 st.write("### (2) add a multi-select for Sub_Category *in the selected Category (1)* ")
 
-st.write("### ADDED###*")
+st.write("Selected Option is :", selected_option)
 
-sub_cat_options = (st['Sub_Category'].loc[st['Category'] == selected_option].unique())
+sub_cat_options = (df['Sub_Category'].loc[df['Category'] == selected_option].unique())
 
 st.multiselect(label2, sub_cat_options)
 
