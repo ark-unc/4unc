@@ -25,24 +25,27 @@ df.set_index('Order_Date', inplace=True)
 sales_by_month = df.filter(items=['Sales']).groupby(pd.Grouper(freq='M')).sum()
 
 st.dataframe(sales_by_month)
+st.write(sales_by_month)
 
 # Here the grouped months are the index and automatically used for the x axis
 st.line_chart(sales_by_month, y="Sales")
 
-# Additions
+# Additions for Assignment
 st.write("## Additions")
 label1 = 'Category'
 label2 = 'Sub-Category'
 st.write("### (1) add a drop down for Category")
 selected_option = st.selectbox(label1, df.groupby("Category"))
-st.write("### (2) add a multi-select for Sub_Category *in the selected Category (1)* ")
-
 st.write("Selected Option is :", selected_option)
 
+st.write("### (2) add a multi-select for Sub_Category *in the selected Category (1)* ")
 sub_cat_options = (df['Sub_Category'].loc[df['Category'] == selected_option].unique())
+selected_sub-cat = st.multiselect(label2, sub_cat_options)
 
-st.multiselect(label2, sub_cat_options)
-
+st.write("### (3) show a line chart of sales for the selected items in (2)")
+#st.line_chart(sales_by_sub-category, y='Sales")
+st.line_chart(df.groupby("Sub_Category", as_index=False).sum(), x="Sub_Category", y="Sales", color="#04f")
+              
 st.write("## Your additions")
 st.write("### (1) add a drop down for Category (https://docs.streamlit.io/library/api-reference/widgets/st.selectbox)")
 st.write("### (2) add a multi-select for Sub_Category *in the selected Category (1)* (https://docs.streamlit.io/library/api-reference/widgets/st.multiselect)")
