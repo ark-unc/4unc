@@ -47,7 +47,7 @@ st.write("Selected Option is :", sub_cat_selected)
 st.write("### (3) show a line chart of sales for the selected items in (2)")
 #sales_by_month_cat = df.filter(items=['Sales','Sub_Category']).groupby(pd.Grouper(freq='M')).sum()
 #sales_by_sub_cat = df.filter(items=['Sales','Order_Date','Sub_Category']).groupby('Sub_Category')
-sales_by_sub_cat = df.groupby(['Sub_Category','Order_Date','Sales']).['Sales'].sum()
+sales_by_sub_cat = df.groupby(['Sub_Category','Order_Date','Sales']) ['Sales'].sum()
 
 
 #sales_by_month_cat_1 = sales_by_month_cat.groupby('Sub_Category')
