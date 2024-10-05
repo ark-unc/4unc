@@ -43,6 +43,8 @@ st.write(sales_by_sub_cat)
 # Here the grouped months are the index and automatically used for the x axis
 st.line_chart(sales_by_month, y="Sales")
 
+st.line_chart(sales_by_sub_cat,x="Order_Date", y="Sales", color="Sub_Category")
+
 # Additions for Assignment
 st.write("## Additions")
 label1 = 'Category'
