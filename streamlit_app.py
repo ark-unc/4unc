@@ -28,7 +28,7 @@ sales_by_month = df.filter(items=['Sales']).groupby(pd.Grouper(freq='M')).sum()
 test_df["Order_Date"] = pd.to_datetime(test_df["Order_Date"])
 test_df.set_index('Order_Date', inplace=True)
 
-sales_by_sub_cat = test_df.groupby([test_df.Order_Date.dt.year, 'Sub_Category']) ['Sales'].sum()
+sales_by_sub_cat = test_df.groupby(['Order_Date', 'Sub_Category']) ['Sales'].sum()
 
 st.dataframe(sales_by_month)
 st.write(sales_by_month)
