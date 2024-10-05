@@ -69,7 +69,7 @@ st.write("Selected Sub-Cat Data for graph:", s2)
 
 st.write("### (4) show three metrics - total sales, total profit, and overall profit")
 
-test_metrics = test_df.groupby(['Sub_Category'])["Sales"].sum()
+test_metrics = test_df.groupby(['Sub_Category'])["Sales","Profit"].sum()
 st.write("METRICS")
 st.write(test_metrics)
 #st.line_chart(sales_by_sub_cat, y="Sales")
