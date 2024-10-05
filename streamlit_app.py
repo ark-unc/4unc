@@ -43,7 +43,7 @@ st.write(sales_by_sub_cat)
 # Here the grouped months are the index and automatically used for the x axis
 st.line_chart(sales_by_month, y="Sales")
 
-st.line_chart(sales_by_sub_cat,x="Order_Date", y="Sales", color="Sub_Category")
+st.line_chart(sales_by_sub_cat, y="Sales", color="Sub_Category")
 
 # Additions for Assignment
 st.write("## Additions")
@@ -73,8 +73,8 @@ st.write("Selected Sub-Cat Data for graph:", s2)
 
 #sales_by_month = df.filter(items=['Sales']).groupby(pd.Grouper(freq='M')).sum()
 
-st.line_chart(sales_by_sub_cat, y='Sales')
-st.line_chart(s2, y='Sales')
+#st.line_chart(sales_by_sub_cat, y='Sales')
+#st.line_chart(s2, y='Sales')
 
 #st.line_chart(df.groupby("Sub_Category", as_index=False).sum(), x="Sub_Category", y="Sales", color="#04f")
               
