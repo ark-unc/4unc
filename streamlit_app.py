@@ -9,7 +9,7 @@ st.write("### Input Data and Examples")
 df = pd.read_csv("Superstore_Sales_utf8.csv", parse_dates=True)
 test_df = pd.read_csv("Superstore_Sales_utf8.csv", parse_dates=True)
 st.dataframe(df)
-st.write(df.head(2))
+#st.write(df.head(2))
 # This bar chart will not have solid bars--but lines--because the detail data is being graphed independently
 st.bar_chart(df, x="Category", y="Sales")
 
@@ -24,6 +24,7 @@ df["Order_Date"] = pd.to_datetime(df["Order_Date"])
 df.set_index('Order_Date', inplace=True)
 # Here the Grouper is using our newly set index to group by Month ('M')
 sales_by_month = df.filter(items=['Sub_Category','Sales']).groupby(pd.Grouper(freq='M')).sum()
+st.line_chart(sales_by_month.groupby("Sub_Category", as_index=False).sum(), y="Sales", color="#04f")
 
 test_df["Order_Date"] = pd.to_datetime(test_df["Order_Date"])
 test_df.set_index('Order_Date', inplace=True)
