@@ -23,6 +23,7 @@ df["Order_Date"] = pd.to_datetime(df["Order_Date"])
 df.set_index('Order_Date', inplace=True)
 # Here the Grouper is using our newly set index to group by Month ('M')
 sales_by_month = df.filter(items=['Sales']).groupby(pd.Grouper(freq='M')).sum()
+sales_by_sub_cat = df.groupby([df.Order_Date.dt.year, 'Sub_Category']) ['Sales'].sum()
 
 st.dataframe(sales_by_month)
 st.write(sales_by_month)
@@ -49,7 +50,7 @@ st.write("### (3) show a line chart of sales for the selected items in (2)")
 #print(str_sls_1)
 #str_sls_2 = str_sls_1.reset_index();
 
-sales_by_sub_cat = df.groupby([df.Order_Date.dt.year, 'Sub_Category']) ['Sales'].sum()
+#sales_by_sub_cat = df.groupby([df.Order_Date.dt.year, 'Sub_Category']) ['Sales'].sum()
 
 
 #sales_by_month_cat_1 = sales_by_month_cat.groupby('Sub_Category')
