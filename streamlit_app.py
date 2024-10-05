@@ -56,7 +56,7 @@ sales_by_sub_cat = df.groupby([df.Order_Date.dt.year, 'Sub_Category']) ['Sales']
 
 
 #sales_by_month_cat_1 = sales_by_month_cat.groupby('Sub_Category')
-st.write("Selected Option is :", sales_by_sub_cat)
+st.write("Selected Sub-Cat :", sales_by_sub_cat)
 
 st.line_chart(sales_by_sub_cat, y='Sales', color='Sub_Category')
 #st.line_chart(df.groupby("Sub_Category", as_index=False).sum(), x="Sub_Category", y="Sales", color="#04f")
