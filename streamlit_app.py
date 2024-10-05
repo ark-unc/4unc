@@ -53,8 +53,6 @@ st.write("### (3) show a line chart of sales for the selected items in (2)")
 #sales_by_sub_cat = df.groupby([df.Order_Date.dt.year, 'Sub_Category']) ['Sales'].sum()
 #st.write("Selected Sub-Cat :", sales_by_sub_cat)
 
-s2 = sales_by_sub_cat.filter(sub_cat_selected)
-st.write("Selected Sub-Cat Data for graph:", s2)
 
 #sales_by_month = df.filter(items=['Sub_Category','Sales']).groupby(pd.Grouper(freq='M')).sum()
 #st.line_chart(sales_by_month, y="Sales", color='Sub_Category')
@@ -65,6 +63,9 @@ test_df.set_index('Order_Date', inplace=True)
 sales_by_sub_cat = test_df.groupby([pd.Grouper(freq='Y'),'Sub_Category'])["Sales"].sum()
 st.write("SALES BY SUB CAT")
 st.write(sales_by_sub_cat)
+
+s2 = sales_by_sub_cat.filter(sub_cat_selected)
+st.write("Selected Sub-Cat Data for graph:", s2)
 
 st.write("### (4) show three metrics - total sales, total profit, and overall profit")
 
