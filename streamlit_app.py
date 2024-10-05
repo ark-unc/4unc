@@ -25,25 +25,11 @@ df.set_index('Order_Date', inplace=True)
 # Here the Grouper is using our newly set index to group by Month ('M')
 sales_by_month = df.filter(items=['Sub_Category','Sales']).groupby(pd.Grouper(freq='M')).sum()
 
-
-#sales_by_month = df.filter(items=['Sub_Category','Sales']).groupby(pd.Grouper(freq='M')).sum()
-#st.line_chart(sales_by_month, y="Sales", color='Sub_Category')
-
-test_df["Order_Date"] = pd.to_datetime(test_df["Order_Date"])
-test_df.set_index('Order_Date', inplace=True)
-
-sales_by_sub_cat = test_df.groupby([pd.Grouper(freq='Y'),'Sub_Category'])["Sales"].sum()
-#sales_by_sub_cat = test_df.groupby(['Sub_Category']) ['Sales'].sum()
-
 st.dataframe(sales_by_month)
-st.write("SALES BY SUB CAT")
-
-st.write(sales_by_sub_cat)
+st.write(sales_by_month)
 
 # Here the grouped months are the index and automatically used for the x axis
 st.line_chart(sales_by_month, y="Sales")
-
-st.line_chart(sales_by_sub_cat, y="Sales")
 
 # Additions for Assignment
 st.write("## Additions")
@@ -69,6 +55,25 @@ st.write("Selected Sub-Cat :", sales_by_sub_cat)
 
 s2 = sales_by_sub_cat.filter(sub_cat_selected)
 st.write("Selected Sub-Cat Data for graph:", s2)
+
+#sales_by_month = df.filter(items=['Sub_Category','Sales']).groupby(pd.Grouper(freq='M')).sum()
+#st.line_chart(sales_by_month, y="Sales", color='Sub_Category')
+
+test_df["Order_Date"] = pd.to_datetime(test_df["Order_Date"])
+test_df.set_index('Order_Date', inplace=True)
+
+sales_by_sub_cat = test_df.groupby([pd.Grouper(freq='Y'),'Sub_Category'])["Sales"].sum()
+st.write("SALES BY SUB CAT")
+st.write(sales_by_sub_cat)
+
+st.write("### (4) show three metrics - total sales, total profit, and overall profit")
+
+test_metrics = test_df.groupby(['Sub_Category','Profit'])["Sales"].sum()
+st.write("METRICS")
+st.write(test_metrics)
+#st.line_chart(sales_by_sub_cat, y="Sales")
+#sales_by_sub_cat = test_df.groupby(['Sub_Category']) ['Sales'].sum()
+
 #sales_by_month_cat_1 = sales_by_month_cat.groupby('Sub_Category')
 
 #sales_by_month = df.filter(items=['Sales']).groupby(pd.Grouper(freq='M')).sum()
