@@ -28,7 +28,7 @@ sales_by_month = df.filter(items=['Sales']).groupby(pd.Grouper(freq='M')).sum()
 test_df["Order_Date"] = pd.to_datetime(test_df["Order_Date"])
 test_df.set_index('Order_Date', inplace=True)
 
-sales_by_sub_cat = test_df.groupby(['Sub_Category', 'Order_Date']) ['Sales'].sum()
+sales_by_sub_cat = test_df.groupby(['Sub_Category']) ['Sales'].sum()
 
 st.dataframe(sales_by_month)
 st.write(sales_by_month)
@@ -56,10 +56,13 @@ st.write("### (3) show a line chart of sales for the selected items in (2)")
 #str_sls_2 = str_sls_1.reset_index();
 
 #sales_by_sub_cat = df.groupby([df.Order_Date.dt.year, 'Sub_Category']) ['Sales'].sum()
-
-
-#sales_by_month_cat_1 = sales_by_month_cat.groupby('Sub_Category')
 st.write("Selected Sub-Cat :", sales_by_sub_cat)
+
+s2 = sales_by_sub_cat.filter(sub_cat_selected)
+st.write("Selected Sub-Cat Data for graph:", s2)
+#sales_by_month_cat_1 = sales_by_month_cat.groupby('Sub_Category')
+
+#sales_by_month = df.filter(items=['Sales']).groupby(pd.Grouper(freq='M')).sum()
 
 #st.line_chart(sales_by_sub_cat, y='Sales', color='Sub_Category')
 #st.line_chart(df.groupby("Sub_Category", as_index=False).sum(), x="Sub_Category", y="Sales", color="#04f")
