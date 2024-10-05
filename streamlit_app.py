@@ -51,7 +51,7 @@ st.write("### (3) show a line chart of sales for the selected items in (2)")
 #str_sls_2 = str_sls_1.reset_index();
 
 #sales_by_sub_cat = df.groupby([df.Order_Date.dt.year, 'Sub_Category']) ['Sales'].sum()
-st.write("Selected Sub-Cat :", sales_by_sub_cat)
+#st.write("Selected Sub-Cat :", sales_by_sub_cat)
 
 s2 = sales_by_sub_cat.filter(sub_cat_selected)
 st.write("Selected Sub-Cat Data for graph:", s2)
