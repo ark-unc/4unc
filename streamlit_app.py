@@ -45,12 +45,11 @@ sub_cat_selected = st.multiselect(label2, sub_cat_options)
 st.write("Selected Option is :", sub_cat_selected)
 
 st.write("### (3) show a line chart of sales for the selected items in (2)")
-#sales_by_month_cat = df.filter(items=['Sales','Sub_Category']).groupby(pd.Grouper(freq='M')).sum()
-#sales_by_sub_cat = df.filter(items=['Sales','Order_Date','Sub_Category']).groupby('Sub_Category')
-#str_sls["Order_Date"] =  pd.to_datetime(str_sls["Order_Date"]);
-#str_sls_1 = str_sls.groupby([str_sls.Order_Date.dt.year,'Category'])["Sales"].sum()
+
 #print(str_sls_1)
 #str_sls_2 = str_sls_1.reset_index();
+df["Order_Date"] = pd.to_datetime(df["Order_Date"])
+df.set_index('Order_Date', inplace=True)
 
 sales_by_sub_cat = df.groupby([df.Order_Date.dt.year, 'Sub_Category']) ['Sales'].sum()
 
