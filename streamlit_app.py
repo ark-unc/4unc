@@ -69,6 +69,12 @@ st.write(sales_by_sub_cat1)
 #pull the rows from 'sales_by_sub_cat for 'sub-cat_slectec'
 s2 = sales_by_sub_cat1.loc[sub_cat_selected]
 #s2 = sales_by_sub_cat.filter(sub_cat_selected)
+st.write("111")
+st.write(s2.loc[0])
+st.write("2222")
+st.write(s2.loc[1])
+
+
 st.write("Selected Sub-Cat Data for graph:", s2)
 
 #st.line_chart(s2, y='Sales', color='Sub_Category')
