@@ -81,6 +81,7 @@ st.write(s3.info())
 st.write("testing4444444")
 for ind in range(len(s3)):
     st.write(s3.loc[sub_cat_selected[ind]])
+    st.metric(s3.loc[sub_cat_selected[ind]])
     
 st.write("testing555555");
 st.write("Metrics Sub-Cat Data :", s3)
