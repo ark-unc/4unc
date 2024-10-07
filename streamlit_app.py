@@ -64,8 +64,9 @@ test_df.set_index('Order_Date', inplace=True)
 sales_by_sub_cat = test_df.groupby([pd.Grouper(freq='Y'),'Sub_Category'])["Sales"].sum()
 st.write("SALES BY SUB CAT")
 st.write(sales_by_sub_cat)
-
-s2 = sales_by_sub_cat.filter(sub_cat_selected)
+#pull the rows from 'sales_by_sub_cat for 'sub-cat_slectec'
+s2 = sales_by_sub_cat.loc[sub_cat_selected]
+#s2 = sales_by_sub_cat.filter(sub_cat_selected)
 st.write("Selected Sub-Cat Data for graph:", s2)
 
 st.write("### (4 & 5) show three metrics - total sales, total profit, and overall profit & Delta")
