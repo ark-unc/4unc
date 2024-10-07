@@ -26,7 +26,7 @@ df.set_index('Order_Date', inplace=True)
 sales_by_month = df.filter(items=['Sub_Category','Sales']).groupby(pd.Grouper(freq='M')).sum()
 
 st.dataframe(sales_by_month)
-st.write(sales_by_month)
+#st.write(sales_by_month)
 
 # Here the grouped months are the index and automatically used for the x axis
 st.line_chart(sales_by_month, y="Sales")
