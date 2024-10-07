@@ -71,7 +71,7 @@ st.write("### (4) show three metrics - total sales, total profit, and overall pr
 
 test_metrics = test_df.groupby(['Sub_Category'])[["Sales","Profit"]].sum()
 st.write("METRICS")
-st.write(test_metrics)
+#st.write(test_metrics)
 print("testing111");
 s3 = test_metrics.loc[sub_cat_selected]
 print("testing22222");
