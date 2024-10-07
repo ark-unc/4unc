@@ -72,7 +72,7 @@ st.write("### (4) show three metrics - total sales, total profit, and overall pr
 test_metrics = test_df.groupby(['Sub_Category'])[["Sales","Profit"]].sum()
 st.write("METRICS")
 st.write(test_metrics)
-s3 = test_metrics.filter(sub_cat_selected)
+s3 = test_metrics.loc[sub_cat_selected]
 st.write("Metrics Sub-Cat Data :", s3)
 
 # for sub_cat_selected extract test_metrics (Sales & Profit) and calculate % profile/sales
