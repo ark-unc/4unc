@@ -80,7 +80,7 @@ st.write("2222")
 
 st.write("Selected Sub-Cat Data for graph:", s2)
 
-st.line_chart(s2)
+#st.line_chart(s2)
 
 st.write("### (4 & 5) show three metrics - total sales, total profit, and overall profit & Delta")
 
