@@ -61,38 +61,39 @@ test_df["Order_Date"] = pd.to_datetime(test_df["Order_Date"])
 test_df.set_index('Order_Date', inplace=True)
 
 sales_by_sub_cat = test_df.groupby([pd.Grouper(freq='Y'),'Sub_Category'])["Sales"].sum()
-st.write("SALES BY SUB CAT")
-st.write(sales_by_sub_cat)
+#st.write("SALES BY SUB CAT")
+#st.write(sales_by_sub_cat)
 
 s2 = sales_by_sub_cat.filter(sub_cat_selected)
 st.write("Selected Sub-Cat Data for graph:", s2)
 
-st.write("### (4) show three metrics - total sales, total profit, and overall profit")
+st.write("### (4 & 5) show three metrics - total sales, total profit, and overall profit & Delta")
 
 test_metrics = test_df.groupby(['Sub_Category'])[["Sales","Profit"]].sum()
 #st.write("METRICS")
 #st.write(test_metrics)
 #st.write("testing111")
 s3 = test_metrics.loc[sub_cat_selected]
-st.write("testing22222")
+#st.write("testing22222")
 overall_profit = test_metrics['Profit'].sum()
 overall_sales = test_metrics['Sales'].sum()
 overall_margin = (overall_profit/overall_sales)*100
-st.write(overall_profit)
-st.write(overall_margin)
-st.write(16.867-overall_margin)
+#st.write(overall_profit)
+#st.write(overall_margin)
+#st.write(16.867-overall_margin)
 
-st.write("length of " + str(len(s3)));
-st.write("testing333333")
+#st.write("length of " + str(len(s3)));
+#st.write("testing333333")
 for ind in range(len(s3)):
     st.metric("Sub-Category " , sub_cat_selected[ind])
     st.metric("Sales ", s3.loc[sub_cat_selected[ind]][0])
     st.metric("Profit ", s3.loc[sub_cat_selected[ind]][1])
     margin = ((s3.loc[sub_cat_selected[ind]][1])/(s3.loc[sub_cat_selected[ind]][0]))*100
     l_margin = margin - overall_margin
-    st.write("local margin")
-    st.write(l_margin)
     st.metric("Overall profit Margin %",margin,delta=l_margin)
+    #st.write("local margin")
+    #st.write(l_margin)
+    
     #st.metric("Overall profit Margin %", ((s3.loc[sub_cat_selected[ind]][1])/(s3.loc[sub_cat_selected[ind]][0]))*100,delta=(((s3.loc[sub_cat_selected[ind]][1])/(s3.loc[sub_cat_selected[ind]][0]))-overall_margin))
 
     #print("Sub-Cat" + t12[ind])
@@ -101,7 +102,7 @@ for ind in range(len(s3)):
     #print("Overall profit Margin %"+ str((t2.loc[t12[ind]][1]/t2.loc[t12[ind]][0])*100))
 
     
-st.write("testing555555");
+#st.write("testing555555");
 #st.write("### (5) use the delta option in the overall profit margin metric to show the difference between the overall average profit margin (all products across all categories)")
 # first find the overall avrage profilt. That is sum of profit column
 #st.write("Metrics Sub-Cat Data :", s3)
@@ -121,7 +122,7 @@ st.write("testing555555");
 
 #st.line_chart(df.groupby("Sub_Category", as_index=False).sum(), x="Sub_Category", y="Sales", color="#04f")
               
-st.write("## Your additions")
+st.write("## Done With additions")
 #st.write("### (1) add a drop down for Category (https://docs.streamlit.io/library/api-reference/widgets/st.selectbox)")
 #st.write("### (2) add a multi-select for Sub_Category *in the selected Category (1)* (https://docs.streamlit.io/library/api-reference/widgets/st.multiselect)")
 #st.write("### (3) show a line chart of sales for the selected items in (2)")
