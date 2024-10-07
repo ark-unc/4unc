@@ -70,7 +70,7 @@ st.write(sales_by_sub_cat1)
 s2 = sales_by_sub_cat1.loc[sub_cat_selected]
 #s2 = sales_by_sub_cat.filter(sub_cat_selected)
 #s2.reset_index()
-s2.set_index('Order_Date', inplace=True)
+s2.set_index('Sub_Category', inplace=True)
 st.write("111")
 #st.write(s2.loc['Sales'])
 st.write("2222")
