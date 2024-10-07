@@ -80,6 +80,7 @@ overall_sales = test_metrics['Sales'].sum()
 overall_margin = (overall_profit/overall_sales)*100
 st.write(overall_profit)
 st.write(overall_margin)
+st.write(16.867-overall_margin)
 
 st.write("length of " + str(len(s3)));
 st.write("testing333333")
