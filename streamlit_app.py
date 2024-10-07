@@ -71,7 +71,7 @@ s2 = sales_by_sub_cat1.loc[sub_cat_selected]
 #s2 = sales_by_sub_cat.filter(sub_cat_selected)
 st.write("Selected Sub-Cat Data for graph:", s2)
 
-st.line_chart(s2, y="Sales", color='Sub_Category')
+#st.line_chart(s2, y="Sales", color='Sub_Category')
 
 st.write("### (4 & 5) show three metrics - total sales, total profit, and overall profit & Delta")
 
