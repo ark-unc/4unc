@@ -62,8 +62,8 @@ test_df["Order_Date"] = pd.to_datetime(test_df["Order_Date"])
 test_df.set_index('Order_Date', inplace=True)
 
 sales_by_sub_cat = test_df.groupby([pd.Grouper(freq='Y'),'Sub_Category'])["Sales"].sum()
-#st.write("SALES BY SUB CAT")
-#st.write(sales_by_sub_cat)
+st.write("SALES BY SUB CAT")
+st.write(sales_by_sub_cat)
 
 s2 = sales_by_sub_cat.filter(sub_cat_selected)
 st.write("Selected Sub-Cat Data for graph:", s2)
