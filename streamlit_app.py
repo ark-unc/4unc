@@ -81,10 +81,19 @@ st.write(s3.info())
 st.write("testing4444444")
 for ind in range(len(s3)):
     st.write(s3.loc[sub_cat_selected[ind]])
-    st.metric(s3.loc[sub_cat_selected[ind]])
+    st.metric(sub_cat_selected[ind])
+    st.metric("Sales", s3.loc[sub_cat_selected[ind]][0])
+    st.metric("Profit", s3.loc[sub_cat_selected[ind]][1])
+    st.metric("Overall profit Margin %", ((s3.loc[sub_cat_selected[ind]][1])/(s3.loc[sub_cat_selected[ind]][1]))*100)
+
+    #print("Sub-Cat" + t12[ind])
+    #print("Sales" + str(t2.loc[t12[ind]][0]))
+    #print("Profit" + str(t2.loc[t12[ind]][1]))
+    #print("Overall profit Margin %"+ str((t2.loc[t12[ind]][1]/t2.loc[t12[ind]][0])*100))
+
     
 st.write("testing555555");
-st.write("Metrics Sub-Cat Data :", s3)
+#st.write("Metrics Sub-Cat Data :", s3)
 #s3.apply(st.metric(s3))
 # for sub_cat_selected extract test_metrics (Sales & Profit) and calculate % profile/sales
 # output of above will be input for st.metric 
