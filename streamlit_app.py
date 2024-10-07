@@ -75,13 +75,20 @@ st.write(test_metrics)
 st.write("testing111")
 s3 = test_metrics.loc[sub_cat_selected]
 st.write("testing22222")
+overall_profit = test_metrics['Profit'].sum()
+overall_sales = test_metrics['Sales'].sum()
+overall_margin = (overall_profit/overall_sales)*100
+st.write(overall_profit)
+st.write(overall_margin)
+
 st.write("length of " + str(len(s3)));
 st.write("testing333333")
 for ind in range(len(s3)):
     st.metric("Sub-Category " , sub_cat_selected[ind])
     st.metric("Sales ", s3.loc[sub_cat_selected[ind]][0])
     st.metric("Profit ", s3.loc[sub_cat_selected[ind]][1])
-    st.metric("Overall profit Margin %", ((s3.loc[sub_cat_selected[ind]][1])/(s3.loc[sub_cat_selected[ind]][0]))*100)
+    st.metric("Overall profit Margin %", ((s3.loc[sub_cat_selected[ind]][1])/(s3.loc[sub_cat_selected[ind]][0]))*100),
+             delta = (overall_profit - ((s3.loc[sub_cat_selected[ind]][1])/(s3.loc[sub_cat_selected[ind]][0]))*100)))
 
     #print("Sub-Cat" + t12[ind])
     #print("Sales" + str(t2.loc[t12[ind]][0]))
@@ -90,6 +97,8 @@ for ind in range(len(s3)):
 
     
 st.write("testing555555");
+#st.write("### (5) use the delta option in the overall profit margin metric to show the difference between the overall average profit margin (all products across all categories)")
+# first find the overall avrage profilt. That is sum of profit column
 #st.write("Metrics Sub-Cat Data :", s3)
 #s3.apply(st.metric(s3))
 # for sub_cat_selected extract test_metrics (Sales & Profit) and calculate % profile/sales
