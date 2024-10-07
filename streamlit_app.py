@@ -73,7 +73,8 @@ test_metrics = test_df.groupby(['Sub_Category'])[["Sales","Profit"]].sum()
 st.write("METRICS")
 st.write(test_metrics)
 s3 = test_metrics.loc[sub_cat_selected]
-print(len(s3))
+print("length of " + str(len(s3)))
+print("testing")
 for ind in range(len(s3)):
     print(s3.loc[sub_cat_selected[ind]])
     
