@@ -78,7 +78,7 @@ for ind in range(len(s3)):
     
 
 st.write("Metrics Sub-Cat Data :", s3)
-s3.apply(st.metric(s3)
+#s3.apply(st.metric(s3))
 # for sub_cat_selected extract test_metrics (Sales & Profit) and calculate % profile/sales
 # output of above will be input for st.metric 
 
