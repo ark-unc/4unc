@@ -78,10 +78,10 @@ st.write("testing22222")
 st.write("length of " + str(len(s3)));
 st.write("testing333333")
 for ind in range(len(s3)):
-    st.write(s3.loc[sub_cat_selected[ind]])
-    st.metric("Sales", s3.loc[sub_cat_selected[ind]][0])
-    st.metric("Profit", s3.loc[sub_cat_selected[ind]][1])
-    st.metric("Overall profit Margin %", ((s3.loc[sub_cat_selected[ind]][1])/(s3.loc[sub_cat_selected[ind]][1]))*100)
+    st.write("Sub-Category " , sub_cat_selected[ind])
+    st.metric("Sales ", s3.loc[sub_cat_selected[ind]][0])
+    st.metric("Profit ", s3.loc[sub_cat_selected[ind]][1])
+    st.metric("Overall profit Margin %", ((s3.loc[sub_cat_selected[ind]][1])/(s3.loc[sub_cat_selected[ind]][1])))
 
     #print("Sub-Cat" + t12[ind])
     #print("Sales" + str(t2.loc[t12[ind]][0]))
