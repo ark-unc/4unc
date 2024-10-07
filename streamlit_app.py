@@ -72,15 +72,17 @@ st.write("### (4) show three metrics - total sales, total profit, and overall pr
 test_metrics = test_df.groupby(['Sub_Category'])[["Sales","Profit"]].sum()
 st.write("METRICS")
 st.write(test_metrics)
+print("testing111");
 s3 = test_metrics.loc[sub_cat_selected]
+print("testing22222");
 print("length of " + str(len(s3)));
-print("testing");
+print("testing333333");
 print(s3.info())
-
+print("testing4444444");
 for ind in range(len(s3)):
     print(s3.loc[sub_cat_selected[ind]])
     
-
+print("testing555555");
 st.write("Metrics Sub-Cat Data :", s3)
 #s3.apply(st.metric(s3))
 # for sub_cat_selected extract test_metrics (Sales & Profit) and calculate % profile/sales
@@ -99,8 +101,8 @@ st.write("Metrics Sub-Cat Data :", s3)
 #st.line_chart(df.groupby("Sub_Category", as_index=False).sum(), x="Sub_Category", y="Sales", color="#04f")
               
 st.write("## Your additions")
-st.write("### (1) add a drop down for Category (https://docs.streamlit.io/library/api-reference/widgets/st.selectbox)")
-st.write("### (2) add a multi-select for Sub_Category *in the selected Category (1)* (https://docs.streamlit.io/library/api-reference/widgets/st.multiselect)")
-st.write("### (3) show a line chart of sales for the selected items in (2)")
-st.write("### (4) show three metrics (https://docs.streamlit.io/library/api-reference/data/st.metric) for the selected items in (2): total sales, total profit, and overall profit margin (%)")
-st.write("### (5) use the delta option in the overall profit margin metric to show the difference between the overall average profit margin (all products across all categories)")
+#st.write("### (1) add a drop down for Category (https://docs.streamlit.io/library/api-reference/widgets/st.selectbox)")
+#st.write("### (2) add a multi-select for Sub_Category *in the selected Category (1)* (https://docs.streamlit.io/library/api-reference/widgets/st.multiselect)")
+#st.write("### (3) show a line chart of sales for the selected items in (2)")
+#st.write("### (4) show three metrics (https://docs.streamlit.io/library/api-reference/data/st.metric) for the selected items in (2): total sales, total profit, and overall profit margin (%)")
+#st.write("### (5) use the delta option in the overall profit margin metric to show the difference between the overall average profit margin (all products across all categories)")
