@@ -70,9 +70,9 @@ st.write(sales_by_sub_cat1)
 s2 = sales_by_sub_cat1.loc[sub_cat_selected]
 #s2 = sales_by_sub_cat.filter(sub_cat_selected)
 st.write("111")
-st.write(s2.loc['Sales'])
+#st.write(s2.loc['Sales'])
 st.write("2222")
-st.write(s2.loc['Sub_Category'])
+#st.write(s2.loc['Sub_Category'])
 
 
 st.write("Selected Sub-Cat Data for graph:", s2)
