@@ -65,7 +65,7 @@ test_df["Order_Date"] = pd.to_datetime(test_df["Order_Date"])
 test_df['Order_Year'] = df['Order_Date'].dt.year
 test_df.set_index('Order_Date', inplace=True)
 
-sales_by_sub_cat = test_df.groupby([pd.Grouper(freq='Y'),'Sub_Category'])["Sales"].sum()
+#sales_by_sub_cat = test_df.groupby([pd.Grouper(freq='Y'),'Sub_Category'])["Sales"].sum()
 #sales_by_sub_cat1 = test_df.groupby(['Sub_Category',pd.Grouper(freq='Y')])["Sales"].sum()
 sales_by_sub_cat1 = test_df.groupby(['Sub-Category', 'Order_Year'])['Sales'].sum().reset_index()
 #sales_by_sub_cat1 = test_df.groupby([pd.Grouper(freq='Y')])["Sub_Category","Sales"].sum()
