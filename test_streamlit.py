@@ -77,10 +77,10 @@ st.dataframe(s2)
 #s2.reset_index()
 #s2.set_index('Sub_Category', inplace=True)
 st.write("111")
-#st.write(s2.loc['Sales'])
+st.write(s2.loc['Sales'])
 #st.write("2222")
 st.write(s2)
-st.line_chart(s2,y='Sales', Color ='Sub_Category')
+#st.line_chart(s2,y='Sales', Color ='Sub_Category')
 
 #st.write("Selected Sub-Cat Data for graph:", s2)
 
