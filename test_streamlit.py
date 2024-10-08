@@ -83,7 +83,7 @@ st.write(ss1.head(1))
 st.write(ss1.get('Sales'))
 
 st.write("2222")
-st.write(ss1.Sub_Category)
+st.write(ss1.get('Sub_Category'))
 #st.line_chart(s2,y='Sales', Color ='Sub_Category')
 
 #st.write("Selected Sub-Cat Data for graph:", s2)
