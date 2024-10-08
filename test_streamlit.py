@@ -81,6 +81,7 @@ st.write("111")
 st.write(ss1.head(1))
 #st.write(ss1.get_loc())
 st.write(ss1.describe())
+st.write(ss1.info())
 
 st.write("2222")
 st.write(ss1.get('Sub_Category'))
