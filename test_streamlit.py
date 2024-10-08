@@ -81,7 +81,7 @@ st.write("111")
 st.write(ss1.head(1))
 #st.write(ss1.get_loc())
 st.write(ss1.describe())
-df_info = ss1.info()
+df_info = s2.info()
 st.write(df_info)
 
 st.write("2222")
