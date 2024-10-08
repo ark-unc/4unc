@@ -71,7 +71,7 @@ st.write(sales_by_sub_cat1)
 s2 = sales_by_sub_cat1.loc[sub_cat_selected]
 st.write("Selected Sub-Cat Data for graph:")
 ss1 = s2.to_frame()
-st.dataframe(s2)
+st.dataframe(ss1)
 #s2.set_index('Order_Date', inplace=True)
 #s2 = sales_by_sub_cat.filter(sub_cat_selected)
 #s2.reset_index()
@@ -84,7 +84,7 @@ st.write(ss1.get('Order_Date'))
 
 st.write("2222")
 st.write(ss1.get('Sub_Category'))
-#st.line_chart(s2,y='Sales', Color ='Sub_Category')
+st.line_chart(ss1,y='Sales')#, Color ='Sub_Category')
 
 #st.write("Selected Sub-Cat Data for graph:", s2)
 
