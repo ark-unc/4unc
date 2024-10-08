@@ -62,7 +62,7 @@ st.write("### (3) show a line chart of sales for the selected items in (2)")
 #st.line_chart(sales_by_month, y="Sales", color='Sub_Category')
 
 test_df["Order_Date"] = pd.to_datetime(test_df["Order_Date"])
-test_df['Order_Year'] = df['Order_Date'].dt.year
+test_df["Order_Year"] = df["Order_Date"].dt.year
 test_df.set_index('Order_Date', inplace=True)
 
 #sales_by_sub_cat = test_df.groupby([pd.Grouper(freq='Y'),'Sub_Category'])["Sales"].sum()
