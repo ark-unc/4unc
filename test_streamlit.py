@@ -80,7 +80,7 @@ st.write("111")
 #st.write(type(ss1))
 st.write(ss1.head(3))
 #st.write(ss1.get_loc())
-st.write(ss1.index)
+st.write(ss1.Sales)
 
 #st.write("2222")
 #st.write(s2)
