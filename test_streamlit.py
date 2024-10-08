@@ -3,6 +3,7 @@ import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 import math
+import seaborn as sns 
 
 st.title("Data App Assignment, on Oct 7th")
 
@@ -61,12 +62,15 @@ st.write("### (3) show a line chart of sales for the selected items in (2)")
 #st.line_chart(sales_by_month, y="Sales", color='Sub_Category')
 
 test_df["Order_Date"] = pd.to_datetime(test_df["Order_Date"])
+test_df['Order_Year'] = df['Order_Date'].dt.year
 test_df.set_index('Order_Date', inplace=True)
 
 sales_by_sub_cat = test_df.groupby([pd.Grouper(freq='Y'),'Sub_Category'])["Sales"].sum()
 #sales_by_sub_cat1 = test_df.groupby(['Sub_Category',pd.Grouper(freq='Y')])["Sales"].sum()
-sales_by_sub_cat1 = test_df.groupby(['Sub-Category', 'Month'])['Sales'].sum().reset_index()
+sales_by_sub_cat1 = test_df.groupby(['Sub-Category', 'Order_Year'])['Sales'].sum().reset_index()
 #sales_by_sub_cat1 = test_df.groupby([pd.Grouper(freq='Y')])["Sub_Category","Sales"].sum()
+p_sales_sub_cat1 = sales_by_sub_cat1.pivot(index='Order_Year', columns='Sub-Category', values='Sales').fillna(0)
+
 st.write("SALES BY SUB CAT")
 st.write(sales_by_sub_cat1)
 #pull the rows from 'sales_by_sub_cat for 'sub-cat_slectec'
