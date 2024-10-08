@@ -80,7 +80,7 @@ st.write("111")
 #st.write(type(ss1))
 st.write(ss1.head(1))
 #st.write(ss1.get_loc())
-st.write(ss1.get('Order_Date'))
+st.write(ss1.shape))
 
 st.write("2222")
 st.write(ss1.get('Sub_Category'))
